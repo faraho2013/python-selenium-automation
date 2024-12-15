@@ -25,9 +25,10 @@ def search_product(context, product):
 
 @when('Add {product} to the cart')
 def search_product(context, product):
+    sleep(2)
     context.driver.find_element(By.CSS_SELECTOR, "[id*='addToCartButton']").click()
     sleep(2)
-    context.driver.find_element(By.CSS_SELECTOR, "[data-test='content-wrapper'][id*='addToCart']").click()
+    context.driver.find_element(By.CSS_SELECTOR, "[data-test='content-wrapper'] [id*='addToCart']").click()
     sleep(5)
 
 
