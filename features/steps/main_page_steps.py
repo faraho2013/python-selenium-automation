@@ -5,8 +5,7 @@ from behave import given, when, then
 
 TARGET_CIRCLE_ON_MAIN = (By.ID, "utilityNav-circle")
 ADD_TO_CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartLink']")
-ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, "[id*='addToCartButton']")
-ADD_TO_CART_BUTTON_SIDE_NAV = (By.CSS_SELECTOR, "[data-test='content-wrapper'] [id*='addToCart']")
+
 
 @given('Open target main page')
 def open_main(context):
@@ -24,12 +23,6 @@ def open_main(context):
 def search_product(context, product):
     context.app.header.search_product(product)
 
-
-@when('Add {product} to the cart')
-def search_product(context, product):
-    context.driver.find_element(*ADD_TO_CART_BUTTON).click()
-    context.driver.wait.until(EC.element_to_be_clickable(ADD_TO_CART_BUTTON_SIDE_NAV))
-    context.driver.find_element(*ADD_TO_CART_BUTTON_SIDE_NAV).click()
 
 @when('Click on Cart icon')
 def click_cart(context):

@@ -4,6 +4,7 @@ Feature: Tests for search
     Given Open target main page
     When Search for tea
     Then Verify search results shown for tea
+    Then Verify search term for tea in url
 
   Scenario: User can search for coffee
     Given Open target main page
@@ -20,6 +21,7 @@ Feature: Tests for search
     When Search for tree
     Then Verify search results shown for tree
     When Add tree to the cart
+    When Add to cart from side nav
     Then Verify added to cart message
 
   Scenario Outline: User can search for a product
